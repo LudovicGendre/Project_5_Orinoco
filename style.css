@@ -33,3 +33,22 @@
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+.col-6{
+    padding-bottom: 2em;
+}
+
+.card {
+    height: 100%;
+}
+
+.card .btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.card .card-text {
+    padding-bottom: 1.5rem;
+}
