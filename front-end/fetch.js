@@ -19,7 +19,7 @@ function createElement(element){
       console.log(divCardDeck)
 
       // Creation div card img top
-      let divCardImg = createElement("div")
+      let divCardImg = createElement("img")
       divCardImg.classList.add("card-img-top")
       divCardImg.src = datas.imageUrl
       console.log(divCardImg)
