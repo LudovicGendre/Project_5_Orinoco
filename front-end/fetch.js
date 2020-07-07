@@ -32,6 +32,12 @@ let containerCard = document.querySelector("#cardContainer")
       divCardImg.setAttribute("alt","Ours en peluche")
       appendChild(divCardDeck, divCardImg)
 
+      // Creation div title
+      let divTitle = createElement("div")
+      divTitle.classList.add("card-title")
+      appendChild(divCardDeck, divTitle)
+      divTitle.innerHTML = datas.name
+
       appendChild(containerCard,divCardDeck)
 
       console.log(data);
