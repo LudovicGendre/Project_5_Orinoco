@@ -10,7 +10,7 @@ function appendChild (parent,element){
 let containerCard = document.querySelector("#cardContainer")
 
 
-  fetch('http://localhost:3001/api/teddies')
+  fetch('http://localhost:3000/api/teddies')
   .then(function(response) {
     return response.json();
   })
