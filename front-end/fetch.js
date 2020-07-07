@@ -28,6 +28,7 @@ let containerCard = document.querySelector("#cardContainer")
       // Creation div card 
       let divCardDeck = createElement("div")
       divCardDeck.classList.add("card")
+      divCardDeck.id = datas._id
       appendChild(divCol, divCardDeck)
       console.log(divCardDeck)
 
@@ -55,6 +56,7 @@ let containerCard = document.querySelector("#cardContainer")
       // Creation div prix
       let divPrice =  createElement("p")
       divPrice.classList.add("card-text")
+      divPrice.classList.add("card-price")
       divPrice.innerHTML = "Prix: " + datas.price + "€"
       appendChild(divCardDeck, divPrice)
 

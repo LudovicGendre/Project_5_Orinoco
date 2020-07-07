@@ -67,4 +67,9 @@
 
 .card .card-title{
     text-align: center;
+    font-size: 2em;
+}
+
+.card .card-price {
+    font-size: 1.3em;
 }
