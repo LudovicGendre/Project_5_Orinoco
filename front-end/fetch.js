@@ -20,9 +20,15 @@ let containerCard = document.querySelector("#cardContainer")
 
     for (let datas of data){
 
+      // Creation div col 
+      let divCol = createElement("div")
+      divCol.classList.add("col-6")
+      
+
       // Creation div card 
       let divCardDeck = createElement("div")
       divCardDeck.classList.add("card")
+      appendChild(divCol, divCardDeck)
       console.log(divCardDeck)
 
       // Creation div card img top
@@ -44,7 +50,21 @@ let containerCard = document.querySelector("#cardContainer")
       divDescription.innerHTML = datas.description
       appendChild(divCardDeck, divDescription)
 
-      appendChild(containerCard,divCardDeck)
+      // Creation div prix
+      let divPrice =  createElement("p")
+      divPrice.classList.add("card-text")
+      divPrice.innerHTML = "Prix: " + datas.price + "€"
+      appendChild(divCardDeck, divPrice)
+
+      // Creation bouton 
+      let buttonMore = createElement("button")
+      buttonMore.classList.add("btn")
+      buttonMore.classList.add("btn-outline-primary")
+      buttonMore.innerHTML = "Voir plus"
+      appendChild(divCardDeck, buttonMore)
+
+      // Balise principal en entrée html
+      appendChild(containerCard,divCol)
 
       console.log(data);
     }
