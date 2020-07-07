@@ -3,7 +3,6 @@ function createElement(element){
   return document.createElement(element);
 }
 
-
   fetch('http://localhost:3001/api/teddies')
   .then(function(response) {
     return response.json();
@@ -18,6 +17,12 @@ function createElement(element){
       let divCardDeck = createElement("div")
       divCardDeck.classList.add("card")
       console.log(divCardDeck)
+
+      // Creation div card img top
+      let divCardImg = createElement("div")
+      divCardImg.classList.add("card-img-top")
+      divCardImg.src = datas.imageUrl
+      console.log(divCardImg)
     }
 
       console.log(data);
