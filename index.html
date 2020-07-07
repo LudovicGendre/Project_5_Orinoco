@@ -1,113 +1,131 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil | Orinoco | e-commerce</title>
-    <meta name="description" content="Orinoco leader numéro 1 de la vente en ligne ! Vous y retrouverez des oursons en peluche mignons !">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil | Orinoco | e-commerce</title>
+  <meta name="description"
+    content="Orinoco leader numéro 1 de la vente en ligne ! Vous y retrouverez des oursons en peluche mignons !">
 
-    <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/db2a924cfd.js" crossorigin="anonymous"></script>
-    <!-- Bootsrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/db2a924cfd.js" crossorigin="anonymous"></script>
+  <!-- Bootsrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+    <script src="front-end/fetch.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">ORINOCO</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="index.html"><i class="fas fa-home"></i> Accueil <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="panier.html"><i class="fas fa-shopping-cart"></i> Panier</a>
-              </div>
-            </div>
-          </nav>
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="card-deck">
-                <div class="card">
-                  <img class="card-img-top" src="./images/teddy_1.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="./images/teddy_2.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="./images/teddy_3.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-              </div>
-              <div class="card-deck">
-                <div class="card">
-                  <img class="card-img-top" src="./images/teddy_4.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="./images/teddy_5.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="./images/teddy_1.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-              </div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">ORINOCO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="index.html"><i class="fas fa-home"></i> Accueil <span
+              class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="panier.html"><i class="fas fa-shopping-cart"></i> Panier</a>
         </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="./images/teddy_1.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 id="monDiv" class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="./images/teddy_2.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="./images/teddy_3.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="./images/teddy_4.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="./images/teddy_5.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="./images/teddy_1.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
     </div>
-    <footer class="page-footer font-small bg-light">
+  </div>
+  <footer class="page-footer font-small bg-light">
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-          <a href="https://github.com/LudovicGendre"> Ludovic Gendre</a>
-        </div>
-        <!-- Copyright -->
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://github.com/LudovicGendre"> Ludovic Gendre</a>
+    </div>
+    <!-- Copyright -->
 
-      </footer>
+  </footer>
 </body>
+
 </html>
