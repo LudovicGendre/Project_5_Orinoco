@@ -7,6 +7,9 @@ function appendChild (parent,element){
   return parent.appendChild(element);
 }
 
+let containerCard = document.querySelector("#cardContainer")
+
+
   fetch('http://localhost:3001/api/teddies')
   .then(function(response) {
     return response.json();
@@ -28,9 +31,13 @@ function appendChild (parent,element){
       divCardImg.src = datas.imageUrl
       divCardImg.setAttribute("alt","Ours en peluche")
       appendChild(divCardDeck, divCardImg)
-    }
+
+      appendChild(containerCard,divCardDeck)
 
       console.log(data);
+    }
+
+    
   })
   // Affiche l'erreur
   .catch(function(error){
