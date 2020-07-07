@@ -3,6 +3,10 @@ function createElement(element){
   return document.createElement(element);
 }
 
+function appendChild (parent,element){
+  return parent.appendChild(element);
+}
+
   fetch('http://localhost:3001/api/teddies')
   .then(function(response) {
     return response.json();
@@ -22,7 +26,8 @@ function createElement(element){
       let divCardImg = createElement("img")
       divCardImg.classList.add("card-img-top")
       divCardImg.src = datas.imageUrl
-      console.log(divCardImg)
+      divCardImg.setAttribute("alt","Ours en peluche")
+      appendChild(divCardDeck, divCardImg)
     }
 
       console.log(data);
