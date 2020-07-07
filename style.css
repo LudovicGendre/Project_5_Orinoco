@@ -10,15 +10,14 @@
     -webkit-text-fill-color: transparent;
 }
 
-.fa-info,
-.fa-home{
+
+/* .fa-shopping-cart{
     background: -webkit-gradient(linear, left top , right bottom, from(#fa8704), to(#9d0ce0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
+}  */
 
 .nav-item{
-    font-family: 'montserrat';
     font-size: 1.3rem;
     font-weight: 600;
 }
@@ -55,4 +54,9 @@
 
 .card .card-text {
     padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.card .card-title{
+    text-align: center;
 }
