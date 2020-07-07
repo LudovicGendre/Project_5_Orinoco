@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+.mr-2, .mx-2 {
+    margin-right: .2rem!important;
+}
+
 
 .navbar-brand{
     font-family: 'pacifico';
@@ -20,6 +24,10 @@
 .nav-item{
     font-size: 1.3rem;
     font-weight: 600;
+}
+.navbar-dark .navbar-nav .active>.nav-link:hover{
+    color: #fa8704;
+    transition: ease-in-out 0.5s;
 }
 .btn-success{
     background: -webkit-gradient(linear, left top , right bottom, from(#fa8704), to(#9d0ce0));
