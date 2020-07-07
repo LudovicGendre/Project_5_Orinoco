@@ -33,10 +33,16 @@ let containerCard = document.querySelector("#cardContainer")
       appendChild(divCardDeck, divCardImg)
 
       // Creation div title
-      let divTitle = createElement("div")
+      let divTitle = createElement("h5")
       divTitle.classList.add("card-title")
-      appendChild(divCardDeck, divTitle)
       divTitle.innerHTML = datas.name
+      appendChild(divCardDeck, divTitle)
+
+      // Creation div description
+      let divDescription =  createElement("p")
+      divDescription.classList.add("card-text")
+      divDescription.innerHTML = datas.description
+      appendChild(divCardDeck, divDescription)
 
       appendChild(containerCard,divCardDeck)
 
