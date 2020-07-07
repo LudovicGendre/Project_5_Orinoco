@@ -36,6 +36,8 @@ let containerCard = document.querySelector("#cardContainer")
       divCardImg.classList.add("card-img-top")
       divCardImg.src = datas.imageUrl
       divCardImg.setAttribute("alt","Ours en peluche")
+      divCardImg.style.width="80%"
+      divCardImg.style.margin="auto"
       appendChild(divCardDeck, divCardImg)
 
       // Creation div title
@@ -61,6 +63,7 @@ let containerCard = document.querySelector("#cardContainer")
       buttonMore.classList.add("btn")
       buttonMore.classList.add("btn-outline-primary")
       buttonMore.innerHTML = "Voir plus"
+      buttonMore.setAttribute("formaction", "http://127.0.0.1:5500/product.html")
       appendChild(divCardDeck, buttonMore)
 
       // Balise principal en entrée html
