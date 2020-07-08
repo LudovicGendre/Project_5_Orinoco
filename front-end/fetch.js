@@ -9,12 +9,6 @@ function appendChild(parent, element) {
 
 let containerCard = document.querySelector("#cardContainer")
 
-// Fonction affichage id en alert
-function clic(outgoingLink){
-  alert(outgoingLink);
-  machin = outgoingLink;
-}
-
 fetch('http://localhost:3000/api/teddies')
   .then(function (response) {
     return response.json();
@@ -70,7 +64,11 @@ fetch('http://localhost:3000/api/teddies')
       buttonMore.classList.add("btn-outline-primary")
       buttonMore.innerHTML = "Voir plus"
       buttonMore.id = datas._id
-      buttonMore.setAttribute("onClick", "clic(this.id)")
+      buttonMore.addEventListener("click", function(stockId){
+        let id = datas._id
+        document.location.href = "product.html?id="+ datas._id
+      })
+      // buttonMore.setAttribute("onClick", "clic(this.id)")
       appendChild(divCardDeck, buttonMore)
 
       // Balise principal en entrée html
