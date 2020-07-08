@@ -15,8 +15,6 @@ fetch('http://localhost:3000/api/teddies')
   })
   .then(function (data) {
 
-    let teddies = data
-
     for (let datas of data) {
 
       // Creation div col 
@@ -66,9 +64,8 @@ fetch('http://localhost:3000/api/teddies')
       buttonMore.id = datas._id
       buttonMore.addEventListener("click", function(stockId){
         let id = datas._id
-        document.location.href = "product.html?id="+ datas._id
+        document.location.href = "product.html?id="+ id
       })
-      // buttonMore.setAttribute("onClick", "clic(this.id)")
       appendChild(divCardDeck, buttonMore)
 
       // Balise principal en entrée html
