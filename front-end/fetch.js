@@ -1,34 +1,38 @@
 // Creation des elements a repeter
-function createElement(element){
+function createElement(element) {
   return document.createElement(element);
 }
 
-function appendChild (parent,element){
+function appendChild(parent, element) {
   return parent.appendChild(element);
 }
 
 let containerCard = document.querySelector("#cardContainer")
 
+// Fonction affichage id en alert
+function clic(outgoingLink){
+  alert(outgoingLink);
+  machin = outgoingLink;
+}
 
-  fetch('http://localhost:3000/api/teddies')
-  .then(function(response) {
+fetch('http://localhost:3000/api/teddies')
+  .then(function (response) {
     return response.json();
   })
-  .then(function(data) {
+  .then(function (data) {
 
     let teddies = data
 
-    for (let datas of data){
+    for (let datas of data) {
 
       // Creation div col 
       let divCol = createElement("div")
       divCol.classList.add("col-6")
-      
+
 
       // Creation div card 
       let divCardDeck = createElement("div")
       divCardDeck.classList.add("card")
-      divCardDeck.id = datas._id
       appendChild(divCol, divCardDeck)
       console.log(divCardDeck)
 
@@ -36,9 +40,9 @@ let containerCard = document.querySelector("#cardContainer")
       let divCardImg = createElement("img")
       divCardImg.classList.add("card-img-top")
       divCardImg.src = datas.imageUrl
-      divCardImg.setAttribute("alt","Ours en peluche")
-      divCardImg.style.width="80%"
-      divCardImg.style.margin="auto"
+      divCardImg.setAttribute("alt", "Ours en peluche")
+      divCardImg.style.width = "80%"
+      divCardImg.style.margin = "auto"
       appendChild(divCardDeck, divCardImg)
 
       // Creation div title
@@ -48,13 +52,13 @@ let containerCard = document.querySelector("#cardContainer")
       appendChild(divCardDeck, divTitle)
 
       // Creation div description
-      let divDescription =  createElement("p")
+      let divDescription = createElement("p")
       divDescription.classList.add("card-text")
       divDescription.innerHTML = datas.description
       appendChild(divCardDeck, divDescription)
 
       // Creation div prix
-      let divPrice =  createElement("p")
+      let divPrice = createElement("p")
       divPrice.classList.add("card-text")
       divPrice.classList.add("card-price")
       divPrice.innerHTML = "Prix: " + datas.price + "€"
@@ -65,19 +69,22 @@ let containerCard = document.querySelector("#cardContainer")
       buttonMore.classList.add("btn")
       buttonMore.classList.add("btn-outline-primary")
       buttonMore.innerHTML = "Voir plus"
-      buttonMore.setAttribute("formaction", "http://127.0.0.1:5500/product.html")
+      buttonMore.id = datas._id
+      buttonMore.setAttribute("onClick", "clic(this.id)")
       appendChild(divCardDeck, buttonMore)
 
       // Balise principal en entrée html
-      appendChild(containerCard,divCol)
+      appendChild(containerCard, divCol)
 
-      console.log(data);
+      
     }
+    console.log(data);
 
-    
   })
   // Affiche l'erreur
-  .catch(function(error){
-      console.log(error)
+  .catch(function (error) {
+    console.log(error)
   });
 
+
+  
