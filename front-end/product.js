@@ -5,10 +5,14 @@ console.log(idProduct);
 
 
 
-fetch('http://localhost:3000/api/teddies')
+fetch('http://localhost:3000/api/teddies/' + idProduct)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
       console.log(data);
+  })
+  // Affiche l'erreur
+  .catch(function (error) {
+    console.log(error)
   });
