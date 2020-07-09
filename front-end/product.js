@@ -42,20 +42,32 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
     divTitle.innerHTML = data.name
     appendChild(divColRight, divTitle)
 
+    // boucle color en fonction array 
     data.colors.forEach(element => {
       let divColor = createElement("button")
       divColor.classList.add("btn")
-      divColor.classList.add('btn-primary')
+      divColor.classList.add('btn-secondary')
       divColor.innerHTML = element
+      divColor.id = element
       appendChild(divColRight, divColor)
     });
     
     let divDescription = createElement("p")
     divDescription.classList.add("texte")
-    divDescription.innerHTML = data.description
+    divDescription.innerHTML =  "Description : "+ "\n" + data.description
     appendChild(divColRight, divDescription)
 
-    
+    let divPrice = createElement("p")
+    divPrice.classList.add("texte")
+    divPrice.innerHTML = "Prix : " + data.price + " €"
+    appendChild(divColRight, divPrice)
+
+    let btnCart = createElement("button")
+    btnCart.classList.add("btn")
+    btnCart.classList.add("btn-primary")
+    btnCart.innerHTML = "Ajouter au Panier"
+    appendChild(divColRight, btnCart)
+
     appendChild(containerProduct, divColRight)
     appendChild(containerProduct, divColLeft)
       console.log(data);
