@@ -79,8 +79,43 @@
     padding: 20px;
     font-size: 0.5rem;
     margin-right: 2rem;
+    border-color: #000000;
 }
-
+/* Couleurs teddies */
+#Tan {
+    background-color: #D2B48C;
+}
+#Chocolate{
+    background-color: #5a3a22;
+}
+#Black{
+    background-color: #000000;
+}
+#White{
+    background-color: #fff;
+    color: #000000;
+}
+#Pale#brown{
+    background-color: #Ae8964;
+}
+#Dark#brown{
+    background-color: #654321;
+}
+#Brown{
+    background-color: #A52A2A;
+}
+#Blue{
+    background-color: #000080;
+}
+#Pink{
+    background-color: #ffc0cb;
+    color: #000000;
+}
+#Beige{
+    background-color: #F5F5DC;
+    color: #000000;
+}
+/* fin Couleurs teddies */
 @media only screen and (max-device-height:850px) 
  {
     .row{
