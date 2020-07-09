@@ -13,14 +13,21 @@ function appendChild(parent, element) {
   return parent.appendChild(element);
 }
 
-let containerProduct= document.querySelector("#cardProduct")
+var productArray = []
+
+let containerProduct = document.querySelector("#cardProduct")
 
 fetch('http://localhost:3000/api/teddies/' + idProduct)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-
+    var productJSON = { 
+      "id" : data._id,
+      "nom": data.name,
+      "prix": data.price,
+      "image": data.imageUrl
+     };
     let divColLeft = createElement("div")
     divColLeft.classList.add("col-md-4")
     divColLeft.classList.add("order-md-1")
@@ -36,7 +43,7 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
     divCardImg.style.width = "100%"
     divCardImg.style.margin = "auto"
     appendChild(divColLeft, divCardImg)
-    
+
     let divTitle = createElement("h5")
     divTitle.classList.add("card-title")
     divTitle.innerHTML = data.name
@@ -51,10 +58,10 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
       divColor.id = element
       appendChild(divColRight, divColor)
     });
-    
+
     let divDescription = createElement("p")
     divDescription.classList.add("texte")
-    divDescription.innerHTML =  "Description : "+ "\n" + data.description
+    divDescription.innerHTML = "Description : " + "\n" + data.description
     appendChild(divColRight, divDescription)
 
     let divPrice = createElement("p")
@@ -63,14 +70,40 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
     appendChild(divColRight, divPrice)
 
     let btnCart = createElement("button")
+    btnCart.classList.add("add-cart")
     btnCart.classList.add("btn")
     btnCart.classList.add("btn-primary")
-    btnCart.innerHTML = "Ajouter au Panier"
-    appendChild(divColRight, btnCart)
+    btnCart.textContent = "Ajouter au Panier"
 
+
+    btnCart.addEventListener("click", function (data) {
+      data.preventDefault();
+      console.log('item added');
+      
+      if (localStorage.getObj('product') !== null) {
+        productArray = localStorage.getObj('product');
+        productArray.push(productJSON);
+        localStorage.setObj('product', productArray);
+      }
+      else {
+        productArray.push(productJSON);
+        localStorage.setObj('product', productArray);
+      }
+    });
+
+    Storage.prototype.setObj = function (key, value) {
+      this.setItem(key, JSON.stringify(value));
+    }
+    Storage.prototype.getObj = function (key) {
+      var value = this.getItem(key);
+      return value && JSON.parse(value);
+    }
+
+
+
+    appendChild(divColRight, btnCart)
     appendChild(containerProduct, divColRight)
     appendChild(containerProduct, divColLeft)
-      console.log(data);
   })
   // Affiche l'erreur
   .catch(function (error) {
