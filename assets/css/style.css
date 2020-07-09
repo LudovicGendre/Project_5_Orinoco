@@ -123,3 +123,7 @@
     } 
 }
 
+.add-cart{
+    position: relative;
+    right: -50%;
+}
