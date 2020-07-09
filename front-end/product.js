@@ -14,6 +14,7 @@ function appendChild(parent, element) {
 }
 
 var productArray = []
+var panierArray = []
 
 let containerProduct = document.querySelector("#cardProduct")
 
@@ -22,12 +23,14 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
     return response.json();
   })
   .then(function (data) {
+
     var productJSON = { 
       "id" : data._id,
       "nom": data.name,
       "prix": data.price,
       "image": data.imageUrl
      };
+
     let divColLeft = createElement("div")
     divColLeft.classList.add("col-md-4")
     divColLeft.classList.add("order-md-1")
@@ -79,15 +82,26 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
     btnCart.addEventListener("click", function (data) {
       data.preventDefault();
       console.log('item added');
-      
-      if (localStorage.getObj('product') !== null) {
-        productArray = localStorage.getObj('product');
+      let productNumbers = localStorage.getItem('carNumbers');
+      productNumbers = parseInt(productNumbers);
+
+      if(localStorage.getObj('carNumbers') !==null) {
+        localStorage.setItem('carNumbers', productNumbers+1);
+        document.querySelector('.btn-success span').textContent = productNumbers + 1;
+        
+      }else{
+        localStorage.setItem('carNumbers', 1);
+        document.querySelector('btn-success span').textContent = 1;
+      };
+
+      if (localStorage.getObj('teddies') !== null) {
+        productArray = localStorage.getObj('teddies');
         productArray.push(productJSON);
-        localStorage.setObj('product', productArray);
+        localStorage.setObj('teddies', productArray);
       }
       else {
         productArray.push(productJSON);
-        localStorage.setObj('product', productArray);
+        localStorage.setObj('teddies', productArray);
       }
     });
 
@@ -98,7 +112,7 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
       var value = this.getItem(key);
       return value && JSON.parse(value);
     }
-
+    
 
 
     appendChild(divColRight, btnCart)
@@ -109,3 +123,4 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
   .catch(function (error) {
     console.log(error)
   });
+
