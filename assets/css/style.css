@@ -73,3 +73,18 @@
 .card .card-price {
     font-size: 1.3em;
 }
+
+.btn-secondary{
+    border-radius: 50%;
+    padding: 20px;
+    font-size: 0.5rem;
+    margin-right: 2rem;
+}
+
+@media only screen and (max-device-height:850px) 
+ {
+    .row{
+        flex-direction: column-reverse;
+    } 
+}
+
