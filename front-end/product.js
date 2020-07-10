@@ -1,3 +1,5 @@
+// const { json } = require("body-parser");
+
 // Recuperation de l'id dans l'url
 const urlParams = new URLSearchParams(window.location.search)
 let idProduct = urlParams.get("id")
@@ -24,12 +26,12 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
   })
   .then(function (data) {
 
-    var productJSON = { 
-      "id" : data._id,
-      "nom": data.name,
-      "prix": data.price,
-      "image": data.imageUrl
-     };
+    var productJSON = {
+      id: data._id,
+      name: data.name,
+      price: data.price,
+      image: data.imageUrl,
+    };
 
     let divColLeft = createElement("div")
     divColLeft.classList.add("col-md-4")
@@ -82,17 +84,6 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
     btnCart.addEventListener("click", function (data) {
       data.preventDefault();
       console.log('item added');
-      let productNumbers = localStorage.getItem('carNumbers');
-      productNumbers = parseInt(productNumbers);
-
-      if(localStorage.getObj('carNumbers') !==null) {
-        localStorage.setItem('carNumbers', productNumbers+1);
-        document.querySelector('.btn-success span').textContent = productNumbers + 1;
-        
-      }else{
-        localStorage.setItem('carNumbers', 1);
-        document.querySelector('btn-success span').textContent = 1;
-      };
 
       if (localStorage.getObj('teddies') !== null) {
         productArray = localStorage.getObj('teddies');
@@ -103,17 +94,31 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
         productArray.push(productJSON);
         localStorage.setObj('teddies', productArray);
       }
+      totalCost(productJSON);
     });
 
-    Storage.prototype.setObj = function (key, value) {
-      this.setItem(key, JSON.stringify(value));
+    Storage.prototype.setObj = function (Key, Value) {
+      this.setItem(Key, JSON.stringify(Value));
     }
-    Storage.prototype.getObj = function (key) {
-      var value = this.getItem(key);
-      return value && JSON.parse(value);
+    Storage.prototype.getObj = function (Key) {
+      var Value = this.getItem(Key);
+      return Value && JSON.parse(Value);
+    }
+    // Function Total panier
+    function totalCost(product) {
+      let cartCost = localStorage.getItem('totalCost');
+      console.log("My cartCost is", cartCost);
+      console.log(typeof cartCost);
+
+      if(cartCost != null) {
+        cartCost = parseInt(cartCost);
+        localStorage.setItem("totalCost", cartCost + product.price);
+      }else{
+        localStorage.setItem("totalCost", product.price);
+      }
+      
     }
     
-
 
     appendChild(divColRight, btnCart)
     appendChild(containerProduct, divColRight)
