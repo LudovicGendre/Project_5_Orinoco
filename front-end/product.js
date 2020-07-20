@@ -1,5 +1,3 @@
-// const { json } = require("body-parser");
-
 // Recuperation de l'id dans l'url
 const urlParams = new URLSearchParams(window.location.search)
 let idProduct = urlParams.get("id")
@@ -22,7 +20,7 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
       price: data.price,
       image: data.imageUrl,
     };
-
+// Structure Product
     let divColLeft = createElement("div")
     divColLeft.classList.add("col-md-4")
     divColLeft.classList.add("order-md-1")
@@ -71,8 +69,10 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
     btnCart.textContent = "Ajouter au Panier"
 
 
-    btnCart.addEventListener("click", function (data) {
-      data.preventDefault();
+    btnCart.addEventListener("click", 
+    
+    // Function chargement dans le localStorage
+    function loadData (data) {
       console.log('item added');
 
       if (localStorage.getObj('teddies') !== null) {
@@ -94,12 +94,11 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
       var Value = this.getItem(Key);
       return Value && JSON.parse(Value);
     }
+
+
     // Function Total panier
     function totalCost(product) {
       let cartCost = localStorage.getItem('totalCost');
-      console.log("My cartCost is", cartCost);
-      console.log(typeof cartCost);
-
       if(cartCost != null) {
         cartCost = parseInt(cartCost);
         localStorage.setItem("totalCost", cartCost + product.price);
@@ -108,8 +107,6 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
       }
       
     }
-    
-
     appendChild(divColRight, btnCart)
     appendChild(containerProduct, divColRight)
     appendChild(containerProduct, divColLeft)
