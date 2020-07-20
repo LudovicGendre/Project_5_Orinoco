@@ -127,3 +127,19 @@
     position: relative;
     right: -50%;
 }
+
+footer {
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    padding-top: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#cardContainer{
+    align-items: center;
+}
