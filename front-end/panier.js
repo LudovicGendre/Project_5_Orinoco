@@ -10,7 +10,7 @@ function displayCart() {
 
   // Structure Panier 
   function structureCart(item) {
-    let divCol = createElement("div")
+    let divCol = createElement("Tbody")
     divCol.classList.add("row")
     appendChild(productContainer, divCol)
 
@@ -38,7 +38,6 @@ function displayCart() {
 
   }
 
-  console.log(cartItems)
   let productContainer = document.querySelector(".cart-tablebody");
   if (cartItems && productContainer) {
     productContainer.innerHTML = '';

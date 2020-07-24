@@ -76,10 +76,15 @@
 
 .btn-secondary{
     border-radius: 50%;
+    margin: 10px;
+    width: 80px;
+    height: 80px;
     padding: 20px;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     margin-right: 2rem;
     border-color: #000000;
+    text-align: center;
+    
 }
 /* Couleurs teddies */
 #Tan {
@@ -121,6 +126,9 @@
     .row{
         flex-direction: column-reverse;
     } 
+    .navbar-brand {
+        font-size: 2rem;
+    }
 }
 
 .add-cart{
@@ -129,10 +137,11 @@
 }
 
 footer {
-    /* position: absolute; */
+    position: absolute;
     bottom: 0;
     width: 100%;
-    padding-top: 50px;
+    height: 60px;
+
 }
 
 * {
@@ -140,6 +149,59 @@ footer {
     padding: 0;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 #cardContainer{
     align-items: center;
+}
+#cardProduct{
+    padding-top: 25%;
+    padding-bottom: 25%;
+}
+/* Mise en page Forms */
+form {
+    margin-bottom: 5rem;
+    position: relative;
+
+}
+.form-group label {
+    display: inline-block;
+}
+.form-group input {
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+
+}
+.form-group.sucess input {
+    border-color: #2ecc71;
+}
+.form-group.error input {
+    border-color: #e74c3c;
+}
+
+.form-group i {
+    position: absolute;
+    top: 25%;
+    right: 2%;
+    /* visibility: hidden; */
+}
+
+.form-group.sucess i.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+}
+.form-group.error i.fa-exclamation-circle{
+    color: #e74c3c;
+    visibility: visible;
+}
+.form-group small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
