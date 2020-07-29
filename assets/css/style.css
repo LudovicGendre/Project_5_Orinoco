@@ -4,6 +4,9 @@
     margin-right: .2rem!important;
 }
 
+body{
+    padding-bottom: 5em;
+}
 
 .navbar-brand{
     font-family: 'pacifico';
@@ -161,47 +164,82 @@ html {
     padding-top: 25%;
     padding-bottom: 25%;
 }
-/* Mise en page Forms */
-form {
-    margin-bottom: 5rem;
-    position: relative;
 
+
+/* Mise en page Forms */
+
+
+.title_confirm {
+    padding: 20px 40px;
 }
-.form-group label {
+
+.title_confirm h2 {
+    margin: 0;
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.form-control {
+    height: inherit;
+    border: inherit;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
     display: inline-block;
+    margin-bottom: 5px;
 }
-.form-group input {
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
     display: block;
+    font-family: inherit;
     font-size: 14px;
     padding: 10px;
     width: 100%;
-
 }
-.form-group.sucess input {
+
+.form-control.sucess input{
     border-color: #2ecc71;
 }
-.form-group.error input {
+.form-control.error input {
     border-color: #e74c3c;
 }
 
-.form-group i {
+.form-control i {
     position: absolute;
-    top: 25%;
-    right: 2%;
-    /* visibility: hidden; */
+    top: 48px;
+    right: 22px;
+    visibility: hidden;
 }
 
-.form-group.sucess i.fa-check-circle{
+.form-control.sucess i.fa-check-circle{
     color: #2ecc71;
     visibility: visible;
 }
-.form-group.error i.fa-exclamation-circle{
+.form-control.error i.fa-exclamation-circle{
     color: #e74c3c;
     visibility: visible;
 }
-.form-group small {
+
+.form-control small {
     visibility: hidden;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 14px;
+    font-size: 1em;
+}
+.form-control.error small{
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.form button {
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
 }

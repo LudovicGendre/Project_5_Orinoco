@@ -32,7 +32,8 @@
   <header>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
       <a class="navbar-brand" href="index.html">Orinoco</a>
-      <a href="panier.html" class="btn btn-success ml-auto mr-2" ><i class="fas fa-shopping-cart"></i> Panier <span id="in-cart-items-num">0</span></a>
+      <a href="panier.html" class="btn btn-success ml-auto mr-2"><i class="fas fa-shopping-cart"></i> Panier <span
+          id="in-cart-items-num">0</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -49,100 +50,72 @@
     </nav>
   </header>
   <div class="container">
-    <div class="row justify-content-md-center"  >
-        <table class="table">
-            <thead>
-                <tr>
-                  <th scope="col">Article</th>
-                  <th scope="col">Prix</th>
-                  <th scope="col">Image</th>
-                </tr>
-            </thead>
-            <tbody class="cart-tablebody" id="cart-tablebody"></tbody>
-        </table>
-        
-        <p>Total de la commande : <span id="subtotal" class="subtotal"></span></p>
-    </div>
-    </div>
-    <div class="container">
     <div class="row justify-content-md-center">
-      <form>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputName">Prénom</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Jean">
-            <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>erreur message</small>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputName">Nom</label>
-            <input type="text" class="form-control" id="inputNickname" placeholder="Dupont">
-            <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>erreur message</small>
-          </div>
-        </div>
-            <div class="form-group sucess">
-              <label for="inputEmail">Email</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Orinoco@g-mail.fr">
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>erreur message</small>
-            </div>
-          <div class="form-group">
-            <label for="inputAddress">Addresse</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="25 rue du pont">
-            <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>erreur message</small>
-          </div>
-          <div class="form-group">
-            <label for="inputAddress2">Complément d'adresse</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Appartement, étage, ou escalier">
-            <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>erreur message</small>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">Ville</label>
-              <input type="text" class="form-control" id="inputCity" placeholder="Paris">
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>erreur message</small>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">Pays</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choix...</option>
-                <option value="France">France</option>
-                <option value="USA">Amérique du Nord</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputZip">Postale</label>
-              <input type="text" class="form-control" id="inputZip" placeholder="75000">
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>erreur message</small>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                se souvenir de moi
-              </label>
-            </div>
-          </div>
-          <button type="submit"  onclick="document.location.href = 'confirm.html'" class="btn btn-danger">Confirmer</button>
-        </form>
-      </div>
-    
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Article</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Image</th>
+          </tr>
+        </thead>
+        <tbody class="cart-tablebody" id="cart-tablebody"></tbody>
+      </table>
+
+      <p>Total de la commande : <span id="subtotal" class="subtotal"></span></p>
     </div>
-  
+  </div>
+  <div class="container" id="container_confirm">
+    <div class="title_confirm">
+      <h2>Commander</h2>
+    </div>
+    <form class="form" id="form">
+      <div class="form-control">
+        <label>Prenom</label>
+        <input type="text" placeholder="Ludovic" id="username">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label>Nom</label>
+        <input type="text" placeholder="Dupont" id="nickname">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label>Email</label>
+        <input type="email" placeholder="orinoco@gmail.fr" id="email">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label>Adresse</label>
+        <input type="text" placeholder="12 rue des chemps" id="adress">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label>Complement adresse</label>
+        <input type="text" placeholder="Appartement, étages" id="adressMore">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label>Ville</label>
+        <input type="text" placeholder="Paris" id="city">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+      </div>
+
+      <button class="btn btn-danger">Confirmer</button>
+    </form>
+  </div>
   <footer class="page-footer font-small bg-dark">
 
     <!-- Copyright -->
@@ -152,6 +125,8 @@
     <!-- Copyright -->
 
   </footer>
+
+
   <script src="../front-end//utils.js"></script>
   <script src="../front-end/panier.js"></script>
 </body>
