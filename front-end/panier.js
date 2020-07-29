@@ -45,8 +45,8 @@ function displayCart() {
 
       // Function Structure du body
       item => {
-      structureCart(item);
-    });
+        structureCart(item);
+      });
 
   }
 }
@@ -81,7 +81,6 @@ form.addEventListener('submit', (e) => {
 
   e.preventDefault();
   checkInputs();
-  
 });
 
 function checkInputs() {
@@ -93,56 +92,68 @@ function checkInputs() {
   const adressMoreValue = adressMore.value.trim();
   const cityValue = city.value.trim();
 
-  const clientObject = { 
-    prenom: usernameValue, 
-    nom:nicknameValue, 
-    email:emailValue,
-    adress:adressValue,
-    city:cityValue
+  const clientObject = {
+    prenom: usernameValue,
+    nom: nicknameValue,
+    email: emailValue,
+    adress: adressValue,
+    city: cityValue
   };
-  
 
-  if (usernameValue === ''){
+  var allIsOK = 0;
+
+  if (usernameValue === '') {
     // affichage erreur
     setErrorFor(username, 'Prenom ne peut être vide');
   } else {
     // affichage sucess
     setSucessFor(username);
+    allIsOK++;
   }
-  if(nicknameValue === ''){
+  if (nicknameValue === '') {
     setErrorFor(nickname, 'Nom ne peut être vide');
   } else {
     // affichage sucess
     setSucessFor(nickname);
+    allIsOK++;
   }
-  if(emailValue === '') {
+  if (emailValue === '') {
     setErrorFor(email, 'Email ne peut être vide');
-  }else if(!isEmail(emailValue)){
+  } else if (!isEmail(emailValue)) {
     setErrorFor(email, 'Email n"est pas valide');
   } else {
     setSucessFor(email);
+    allIsOK++;
   }
-  if(adressValue === ''){
+  if (adressValue === '') {
     setErrorFor(adress, 'Adresse ne peut être vide');
   } else {
     // affichage sucess
     setSucessFor(adress);
+    allIsOK++;
   }
-  if(cityValue === ''){
+  if (cityValue === '') {
     setErrorFor(city, 'Ville ne peut être vide');
   } else {
     // affichage sucess
     setSucessFor(city);
+    allIsOK++;
   }
+  if (allIsOK == 5) {  
     localStorage.setItem('client', JSON.stringify(clientObject));
+    confirmPage();
+    
+  }
+  else {  console.log('erreur');}
+  
 }
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement; // .form-control
   const small = formControl.querySelector('small');
-// Ajout message d'erreur dans le small
+  // Ajout message d'erreur dans le small
   small.innerText = message;
-// Ajout de la classe error
+  // Ajout de la classe error
   formControl.className = 'form-control error';
 }
 
@@ -155,7 +166,9 @@ function isEmail(email) {
   return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
-
+function confirmPage(){
+  document.location.href="confirm.html"
+}
 
 
 // Appel des fonctions
