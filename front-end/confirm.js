@@ -22,12 +22,12 @@ function displayConfirm(){
 
 
     let pEmail = createElement("p")
-    pEmail.classList.add("text")
+    pEmail.classList.add("lead")
     pEmail.innerHTML = "Un e-mail de confirmation a été envoyé à " + confirmClient.email
     appendChild(emailContainer, pEmail)
 
     let pHour = createElement("p")
-    pHour.classList.add("text")
+    pHour.classList.add("lead")
     pHour.innerHTML = "Votre commande a été effectuée à " + heure + "h" + minutes 
     appendChild(emailContainer, pHour)
 
@@ -36,4 +36,9 @@ function displayConfirm(){
     console.log('votre commande a été effectué à '+heure+"H"+minutes)
 }
 
+
+function okConfirm(){
+    localStorage.clear();
+    document.location.href="index.html"
+}
 displayConfirm();

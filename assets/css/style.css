@@ -127,7 +127,7 @@ body{
 @media only screen and (max-device-height:850px) 
  {
     .row{
-        flex-direction: column-reverse;
+        flex-direction: column;
     } 
     .navbar-brand {
         font-size: 2rem;
@@ -249,6 +249,11 @@ html {
 
 
 /* Check Bag (confirm.html) */
+#emailContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+}
+
 .check_bag{
     position: relative;
     font: bold 600% sans-serif;
