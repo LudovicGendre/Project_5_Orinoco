@@ -246,3 +246,29 @@ html {
     padding: 10px;
     width: 100%;
 }
+
+
+/* Check Bag (confirm.html) */
+.check_bag{
+    position: relative;
+    font: bold 600% sans-serif;
+}
+
+.check_bag .fa-shopping-bag,
+.check_bag .fa-check {
+    position: absolute;
+    margin:0px;
+    top: 0px;
+    left: 0px;
+    
+}
+
+.check_bag .fa-shopping-bag {
+    z-index: 0;
+    color: #343a40;
+}
+
+.check_bag .fa-check{
+    z-index: 1;
+    color: #2ecc71;
+}
