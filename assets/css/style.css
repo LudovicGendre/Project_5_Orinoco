@@ -277,3 +277,26 @@ html {
     z-index: 1;
     color: #2ecc71;
 }
+
+/* Panier true */
+
+.check_cart {
+    position: relative;
+}
+.check_cart .fa-shopping-cart{
+    font-size: 23px;
+}
+
+.check_cart .fa-circle {
+    position: absolute;
+    font-size: 13px;
+    top: 5px;
+    left: 30px;
+    margin: 0px;
+    color: rgb(49, 231, 255);
+    visibility: hidden;
+}
+
+.check_cart.add .fa-circle{
+    visibility: visible;
+}
