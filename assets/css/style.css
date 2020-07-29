@@ -175,6 +175,9 @@ html {
 
 .title_confirm h2 {
     margin: 0;
+    text-align: center;
+    border-top: 2px solid #dee2e6;
+    width: 100%;
 }
 
 .form {

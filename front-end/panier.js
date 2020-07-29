@@ -5,7 +5,7 @@ var totalCost = localStorage.getItem('totalCost');
 
 // Creation des elements a repeter
 function displayCart() {
-  let cartItems = localStorage.getItem("teddies");
+  let cartItems = localStorage.getItem('teddies');
   cartItems = JSON.parse(cartItems);
 
   // Structure Panier 
