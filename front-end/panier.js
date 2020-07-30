@@ -76,6 +76,7 @@ const email = document.getElementById('email');
 const adress = document.getElementById('adress');
 const adressMore = document.getElementById('adressMore');
 const city = document.getElementById('city');
+const orders_id = strRandom();
 
 form.addEventListener('submit', (e) => {
 
@@ -99,9 +100,10 @@ function checkInputs() {
     adress: adressValue,
     adressMore: adressMoreValue,
     city: cityValue,
-    id: strRandom()
+    order_id: orders_id
   };
 
+  
   var allIsOK = 0;
 
   if (usernameValue === '') {
@@ -169,7 +171,7 @@ function isEmail(email) {
 }
 // function confirm Page
 function confirmPage(){
-  document.location.href="confirm.html"
+  document.location.href="confirm.html?order="+ orders_id
 }
 
 // Function Creation identifiant random
