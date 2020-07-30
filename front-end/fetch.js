@@ -79,6 +79,8 @@ fetch('http://localhost:3000/api/teddies')
   // Affiche l'erreur
   .catch(function (error) {
     console.log(error)
+    console.log("cheh")
+    structureError(error)
   });
 
 

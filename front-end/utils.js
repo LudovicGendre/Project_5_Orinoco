@@ -1,3 +1,5 @@
+let container = document.querySelector(".container")
+
 // Creation des elements a repeter
 function createElement(element) {
     return document.createElement(element);
@@ -21,4 +23,10 @@ function createElement(element) {
     addItem.className = "btn btn-success ml-auto mr-2 check_cart add"
   }
 
+  function structureError(error){
+    let divTexte = createElement("p")
+    divTexte.classList.add("texte")
+    divTexte.innerHTML = "Erreur serveur " + error
+    appendChild(container, divTexte)
+  }
   fullCart();

@@ -113,6 +113,6 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
   })
   // Affiche l'erreur
   .catch(function (error) {
-    console.log(error)
+    structureError(error)
   });
 
