@@ -50,6 +50,8 @@ function displayConfirm(){
 
 }
 
+//  Function affichage du panier
+
 function recapCart(){
     let recapCart = localStorage.getItem('teddies');
     recapCart = JSON.parse(recapCart);
@@ -57,10 +59,34 @@ function recapCart(){
         recapContainer.innerHTML = '';
         Object.values(recapCart).map(
             item => {
-                let div = createElement("div")
-                div.classList.add("col")
-                div.innerHTML += item.name
-                appendChild(recapContainer, div)
+
+                let divCard = createElement("div")
+                divCard.classList.add("card")
+                appendChild(recapContainer, divCard)
+
+                let divCardImg = createElement("img")
+                divCardImg.classList.add("card-img-top")
+                divCardImg.src += item.image
+                divCardImg.setAttribute("alt", "Ours en peluche")
+                divCardImg.style.width = "80%"
+                divCardImg.style.margin = "auto"
+                appendChild(divCard, divCardImg)
+                
+                let divBody = createElement("div")
+                divBody.classList.add("card-body")
+                appendChild(divCard, divBody)
+
+                let divTitle = createElement("h5")
+                divTitle.classList.add("card-title")
+                divTitle.innerHTML+= item.name
+                appendChild(divBody, divTitle)
+
+                let divText = createElement("p")
+                divText.classList.add("card-text")
+                divText.innerHTML+= item.price + "€" 
+                appendChild(divBody, divText)
+
+
             });
     }
 }
