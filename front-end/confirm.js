@@ -10,6 +10,7 @@ function displayConfirm(){
     let confirmClient = localStorage.getItem('client');
     confirmClient = JSON.parse(confirmClient);
 
+
     let confirmContainer = document.querySelector("#confirmContainer");
     let emailContainer =  document.querySelector("#emailContainer");
 
@@ -21,6 +22,11 @@ function displayConfirm(){
 
 
 
+    let pAdresse = createElement("p")
+    pAdresse.classList.add("lead")
+    pAdresse.innerHTML = "Elle sera livré au " + confirmClient.adress+ " " +confirmClient.adressMore+", " + confirmClient.city
+    appendChild(emailContainer, pAdresse) 
+
     let pEmail = createElement("p")
     pEmail.classList.add("lead")
     pEmail.innerHTML = "Un e-mail de confirmation a été envoyé à " + confirmClient.email
@@ -28,17 +34,21 @@ function displayConfirm(){
 
     let pHour = createElement("p")
     pHour.classList.add("lead")
-    pHour.innerHTML = "Votre commande a été effectuée à " + heure + "h" + minutes 
+    pHour.innerHTML = "Votre commande a été effectuée à " + heure + "h" + minutes + ", le numéro de votre commande : " + confirmClient.id
     appendChild(emailContainer, pHour)
 
-    console.log(confirmClient)
-    console.log(confirmClient.adress)
-    console.log('votre commande a été effectué à '+heure+"H"+minutes)
+    let pTotal = createElement("p")
+    pTotal.classList.add("lead")
+    pTotal.innerHTML = "Votre carte bancaire vient d'être utilisé pour un achat de " + totalCost +" €"
+    appendChild(emailContainer, pTotal)
+
 }
 
-
+// Function vider localStorage et retour home
 function okConfirm(){
     localStorage.clear();
     document.location.href="index.html"
 }
+
+
 displayConfirm();
