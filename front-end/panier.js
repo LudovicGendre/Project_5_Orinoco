@@ -97,7 +97,9 @@ function checkInputs() {
     nom: nicknameValue,
     email: emailValue,
     adress: adressValue,
-    city: cityValue
+    adressMore: adressMoreValue,
+    city: cityValue,
+    id: strRandom()
   };
 
   var allIsOK = 0;
@@ -147,7 +149,7 @@ function checkInputs() {
   else {  console.log('erreur');}
   
 }
-
+// Function Erreur
 function setErrorFor(input, message) {
   const formControl = input.parentElement; // .form-control
   const small = formControl.querySelector('small');
@@ -156,18 +158,46 @@ function setErrorFor(input, message) {
   // Ajout de la classe error
   formControl.className = 'form-control error';
 }
-
+// function sucess
 function setSucessFor(input) {
   const formControl = input.parentElement;
   formControl.className = 'form-control sucess';
 }
-
+//  function verification mail
 function isEmail(email) {
   return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
-
+// function confirm Page
 function confirmPage(){
   document.location.href="confirm.html"
+}
+
+// Function Creation identifiant random
+function strRandom(o) {
+  var a = 8,
+      b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+      c = '',
+      d = 0,
+      e = ''+b;
+  if (o) {
+    if (o.startsWithLowerCase) {
+      c = b[Math.floor(Math.random() * b.length)];
+      d = 1;
+    }
+    if (o.length) {
+      a = o.length;
+    }
+    if (o.includeUpperCase) {
+      e += b.toUpperCase();
+    }
+    if (o.includeNumbers) {
+      e += '1234567890';
+    }
+  }
+  for (; d < a; d++) {
+    c += e[Math.floor(Math.random() * e.length)];
+  }
+  return c;
 }
 
 

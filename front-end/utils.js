@@ -15,6 +15,7 @@ function createElement(element) {
     }
   }
 
+  // Function changement nom class
   function setAddItem() {
     const addItem = document.querySelector('.check_cart');
     addItem.className = "btn btn-success ml-auto mr-2 check_cart add"

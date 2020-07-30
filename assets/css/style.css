@@ -284,7 +284,7 @@ html {
     position: relative;
 }
 .check_cart .fa-shopping-cart{
-    font-size: 23px;
+    font-size: 23px;    
 }
 
 .check_cart .fa-circle {
@@ -293,7 +293,7 @@ html {
     top: 5px;
     left: 30px;
     margin: 0px;
-    color: rgb(49, 231, 255);
+    color: #b6c9db;
     visibility: hidden;
 }
 
