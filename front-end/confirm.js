@@ -35,17 +35,17 @@ function displayConfirm(){
 
     let pEmail = createElement("p")
     pEmail.classList.add("lead")
-    pEmail.innerHTML = "Un e-mail de confirmation a été envoyé à " + confirmClient.email
+    pEmail.innerHTML = "Un e-mail de confirmation a été envoyé à " + confirmClient.email.bold()
     appendChild(emailContainer, pEmail)
 
     let pHour = createElement("p")
     pHour.classList.add("lead")
-    pHour.innerHTML = "Votre commande a été effectuée à " + heure + "h" + minutes + ", le numéro de votre commande : " + confirmClient.order_id
+    pHour.innerHTML = "Votre commande a été effectuée à " + heure + "h" + minutes + ", le numéro de votre commande : " + confirmClient.order_id.bold()
     appendChild(emailContainer, pHour)
 
     let pTotal = createElement("p")
     pTotal.classList.add("lead")
-    pTotal.innerHTML = "Votre carte bancaire vient d'être utilisé pour un achat de " + totalCost +" €"
+    pTotal.innerHTML = "Votre carte bancaire vient d'être utilisé pour un achat de " + totalCost.bold() +" €".bold()
     appendChild(emailContainer, pTotal)
 
 }
