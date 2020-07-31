@@ -20,7 +20,7 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
       price: data.price,
       image: data.imageUrl,
     };
-// Structure Product
+    // Structure Product
     let divColLeft = createElement("div")
     divColLeft.classList.add("col-md-4")
     divColLeft.classList.add("order-md-1")
@@ -62,30 +62,24 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
     divPrice.innerHTML = "Prix : " + data.price + " €"
     appendChild(divColRight, divPrice)
 
-    let btnCart = createElement("button")
-    btnCart.classList.add("add-cart")
-    btnCart.classList.add("btn")
-    btnCart.classList.add("btn-primary")
-    btnCart.textContent = "Ajouter au Panier"
+    const btnCart = document.querySelector(".btn-primary")
+    btnCart.addEventListener("click",
 
+      // Function chargement dans le localStorage
+      function loadData(data) {
+        console.log('item added');
 
-    btnCart.addEventListener("click", 
-    
-    // Function chargement dans le localStorage
-    function loadData (data) {
-      console.log('item added');
-
-      if (localStorage.getObj('teddies') !== null) {
-        productArray = localStorage.getObj('teddies');
-        productArray.push(productJSON);
-        localStorage.setObj('teddies', productArray);
-      }
-      else {
-        productArray.push(productJSON);
-        localStorage.setObj('teddies', productArray);
-      }
-      totalCost(productJSON);
-    });
+        if (localStorage.getObj('teddies') !== null) {
+          productArray = localStorage.getObj('teddies');
+          productArray.push(productJSON);
+          localStorage.setObj('teddies', productArray);
+        }
+        else {
+          productArray.push(productJSON);
+          localStorage.setObj('teddies', productArray);
+        }
+        totalCost(productJSON);
+      });
 
     Storage.prototype.setObj = function (Key, Value) {
       this.setItem(Key, JSON.stringify(Value));
@@ -99,13 +93,13 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
     // Function Total panier
     function totalCost(product) {
       let cartCost = localStorage.getItem('totalCost');
-      if(cartCost != null) {
+      if (cartCost != null) {
         cartCost = parseInt(cartCost);
         localStorage.setItem("totalCost", cartCost + product.price);
-      }else{
+      } else {
         localStorage.setItem("totalCost", product.price);
       }
-      
+
     }
     appendChild(divColRight, btnCart)
     appendChild(containerProduct, divColRight)
@@ -115,4 +109,41 @@ fetch('http://localhost:3000/api/teddies/' + idProduct)
   .catch(function (error) {
     structureError(error)
   });
+
+// function animation btn
+
+
+$(function () {
+
+  function RippleStyle(width, height, posX, posY) {
+    this.width = (width <= height) ? height : width;
+    this.height = (width <= height) ? height : width;
+    this.top = posY - (this.height * 0.5);
+    this.left = posX - (this.width * 0.5);
+  }
+
+  $('.btn-primary').on('mousedown', function (e) {
+    //ajout de la classe btn-ripple
+    var rippleEl = $('<span class="btn-ripple"></span>').appendTo(this);
+
+    // Position
+    var pos = $(this).offset();
+
+    var width = $(this).outerWidth();
+    var height = $(this).outerHeight();
+
+    // Position du curseur
+    var posX = e.pageX - pos.left;
+    var posY = e.pageY - pos.top;
+
+    // Effet Ripple
+    var rippleStyle = new RippleStyle(width, height, posX, posY);
+    rippleEl.css(rippleStyle);
+  });
+  $('.btn-primary').on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', '.btn-ripple', function () {
+    $(this).remove();
+  });
+});
+
+
 
