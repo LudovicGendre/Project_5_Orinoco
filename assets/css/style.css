@@ -335,3 +335,12 @@ html {
       opacity: 0;
     }
   }
+
+
+.btn-outline-primary {
+    color: #5f27cd;
+    border-color: #5f27cd;
+}
+.btn-outline-primary:hover{
+    background-color: #5f27cd;
+}
