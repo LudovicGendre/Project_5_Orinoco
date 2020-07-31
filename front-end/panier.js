@@ -143,12 +143,15 @@ function checkInputs() {
     setSucessFor(city);
     allIsOK++;
   }
-  if (allIsOK == 5) {  
+
+
+  // Condition confirmation commande
+  if ((allIsOK == 5) && (totalCost!= null)) {  
     localStorage.setItem('client', JSON.stringify(clientObject));
     confirmPage();
     
   }
-  else {  console.log('erreur');}
+  else {  alert("Le serveur ne répond plus \n Nous ne sommes pas en mesure de confirmer votre commande \n Veuillez réessayer plus tard, nous sommes désolées");}
   
 }
 // Function Erreur
