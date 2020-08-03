@@ -69,6 +69,13 @@ function totalCart() {
   appendChild(subTotal, divPrice)
 }
 
+
+
+// FORMS
+
+
+
+
 const form = document.getElementById('form');
 const username = document.getElementById('username');
 const nickname = document.getElementById('nickname');
@@ -78,10 +85,14 @@ const adressMore = document.getElementById('adressMore');
 const city = document.getElementById('city');
 const orders_id = strRandom();
 
+let button = form.querySelector('button[type=submit');
+
 form.addEventListener('submit', (e) => {
 
+  button.disabled = true
   e.preventDefault();
   checkInputs();
+  formData();
 });
 
 function checkInputs() {
@@ -147,8 +158,8 @@ function checkInputs() {
 
   // Condition confirmation commande
   if ((allIsOK == 5) && (totalCost!= null)) {  
-    localStorage.setItem('client', JSON.stringify(clientObject));
-    confirmPage();
+    // localStorage.setItem('client', JSON.stringify(clientObject));
+    // confirmPage();
     
   }
   else {  alert("Le serveur ne répond plus \n Nous ne sommes pas en mesure de confirmer votre commande \n Veuillez réessayer plus tard, nous sommes désolées");}
@@ -203,6 +214,17 @@ function strRandom(o) {
     c += e[Math.floor(Math.random() * e.length)];
   }
   return c;
+}
+
+function formData(){
+  let data = new formData(form)
+  fetch(form.getAttribute('action'), {
+    method: 'POST',
+    headers: {
+      'X-Requestd-With' : 'xmlhttprequest'
+    },
+
+  })
 }
 
 
