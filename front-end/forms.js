@@ -16,7 +16,7 @@ let button = form.querySelector('button[type=submit');
 
         
       });
-      
+
 let products = [];
 JSON.parse(localStorage.getItem('teddies')).forEach((produit) => {
     products.push(produit._id);  
@@ -58,11 +58,14 @@ const testForms = (isTest, value, input, name, errorMessage) => {
       test[name] = false
     }
   }
+  
 // Test donnée dans les inputs
   let isNormal = /^[a-zA-Z- ]+$/u
   let isEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   let isAdress = /^[0-9]{1,5}( [-a-zA-Zàâäéèêëïîôöùûüç ]+)+$/
 
+
+  // Test Username
   form.username.addEventListener('change', e=> 
     testForms(
       isNormal,
@@ -72,5 +75,43 @@ const testForms = (isTest, value, input, name, errorMessage) => {
       "Desolé, vous ne pouvez pas avoir de caractères spéciaux dans votre prénom"
     ), 
   );
-
-  
+  // Test Nickname
+  form.nickname.addEventListener('change', e=> 
+    testForms(
+      isNormal,
+      e.target.value,
+      nickname,
+      "Nom",
+      "Desolé, vous ne pouvez pas avoir de caractères spéciaux dans votre Nom"
+    ), 
+  );
+  // Test Email
+  form.email.addEventListener('change', e=> 
+    testForms(
+      isEmail,
+      e.target.value,
+      email,
+      "email",
+      "Desolé, votre email n'est pas valide"
+    ), 
+  );
+// Test Adress
+  form.adress.addEventListener('change', e=> 
+  testForms(
+    isAdress,
+    e.target.value,
+    adress,
+    "Adresse",
+    "Desolé, votre adresse n'est pas valide"
+  ), 
+);
+// Test Ville
+form.city.addEventListener('change', e=> 
+testForms(
+  isNormal,
+  e.target.value,
+  city,
+  "Ville",
+  "Desolé, votre ville n'est pas valide"
+), 
+);
