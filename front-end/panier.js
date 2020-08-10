@@ -1,10 +1,10 @@
-var panier = localStorage.getItem('teddies');
 var totalCost = localStorage.getItem('totalCost');
+let cartItems = localStorage.getItem('teddies');
+cartItems = JSON.parse(cartItems);
+
 
 // Creation des elements a repeter
 function displayCart() {
-  let cartItems = localStorage.getItem('teddies');
-  cartItems = JSON.parse(cartItems);
 
   // Structure Panier 
   function structureCart(item) {
@@ -54,12 +54,6 @@ function displayCart() {
 function totalCart() {
   let containerProduct = document.querySelector("#cart-tablebody")
   let subTotal = document.querySelector("#subtotal")
-
-  let divTitle = createElement("h5")
-  divTitle.classList.add("card-title")
-  divTitle.innerHTML = panier
-  appendChild(containerProduct, divTitle)
-
 
   let divPrice = createElement("h3")
   divPrice.classList.add("price")

@@ -40,7 +40,7 @@ function displayConfirm(){
 
     let pHour = createElement("p")
     pHour.classList.add("lead")
-    pHour.innerHTML = "Votre commande a été effectuée à " + heure + "h" + minutes + ", le numéro de votre commande : " + confirmClient.order_id.bold()
+    pHour.innerHTML = "Votre commande a été effectuée à " + heure + "h" + minutes + ", le numéro de votre commande : " + confirmClient.order.bold()
     appendChild(emailContainer, pHour)
 
     let pTotal = createElement("p")
